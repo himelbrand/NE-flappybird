@@ -13,11 +13,13 @@ After the input layer we use a sigmoid activation, and after the hidden layer we
 
 Note that we use no bias thus we have a total of 16 weights to learn.
 
-<img src="https://drive.google.com/uc?export=view&id=1G9neJrzQ8sGTeUPnPvnJlmH_AnA6VHNQ" alt="flappybird NN"/>
+![flappybird NN](readme_data/NE-flappy-NN.png)
 
 ## The genome
 <br>
-<img src="https://drive.google.com/uc?export=view&id=1ilIIhYEFnwmRDn-6aDE-7usQKE5pNdZw" alt="flappybird genome"/>
+
+![flappybird genome](readme_data/flappy-genome.png)
+
 <br>
 
 The bird genome is just the weights of the NN.
@@ -48,7 +50,7 @@ The initial population size is 100 birds, and since we use a cartesian product f
 ## Replay of selected generetions during evolution
   Generetion 2 |  Generetion 5 | Generetion 67  |  Generetion 88 - replay speed x2|
 |:---:|:---:|:---:|:---:|
-|  <img src="https://drive.google.com/uc?export=view&id=1tN4Sui_eyJXjYRQpQPdcQxov7xLsqCoI" alt="gen2 replay" width="180"/> |  <img src="https://drive.google.com/uc?export=view&id=1T7s2lmJZ08FZbAKPBva7ys7wD0Z4hlBT" alt="gen5 replay" width="180"/> |  <img src="https://drive.google.com/uc?export=view&id=1Uv2B7WL14p15VT1A4yegzfhJJdDeV3Mg" alt="gen67 replay" width="180"/> |  <img src="https://drive.google.com/uc?export=view&id=1xU4amVtbHnCuQxppxnjqzDGwMnqAulYk" alt="gen88 replay double speed" width="180"/> |
+|  ![gen2 replay](readme_data/gen2-1-mr5.gif)|  ![gen5 replay](readme_data/gen5-43-mr5.gif) |  ![gen67 replay](readme_data/gen67-278-mr5.gif) |  ![gen67 replay](readme_data/gen88-486-mr5.gif) |
 
 ## Plots of results using different mutation rates
 

@@ -49,3 +49,14 @@ The initial population size is 100 birds, and since we use a cartesian product f
   Generetion 2 |  Generetion 5 | Generetion 67  |  Generetion 88 - replay speed x2|
 |:---:|:---:|:---:|:---:|
 |  <img src="https://drive.google.com/uc?export=view&id=1tN4Sui_eyJXjYRQpQPdcQxov7xLsqCoI" alt="gen2 replay" width="180"/> |  <img src="https://drive.google.com/uc?export=view&id=1T7s2lmJZ08FZbAKPBva7ys7wD0Z4hlBT" alt="gen5 replay" width="180"/> |  <img src="https://drive.google.com/uc?export=view&id=1Uv2B7WL14p15VT1A4yegzfhJJdDeV3Mg" alt="gen67 replay" width="180"/> |  <img src="https://drive.google.com/uc?export=view&id=1xU4amVtbHnCuQxppxnjqzDGwMnqAulYk" alt="gen88 replay double speed" width="180"/> |
+
+## Plots of results using different mutation rates
+
+### Average score for top bird in population generations 0-100
+![img](plots/comp_0-100_score_mr.png)
+
+### Average score for selected parents (top 10 birds) in population generations 0-100
+![img](plots/comp_0-100_score_parents_mr.png)
+
+### Average score for entire population generations 0-100
+![img](plots/comp_0-100_score_pop_mr.png)

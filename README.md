@@ -12,7 +12,20 @@ The observation or input is the delta x and y to the next tunnel from the curren
 
 After the input layer we use a sigmoid activation, and after the hidden layer we have a softmax activation, thus using the argmax on the output vector gives us the action to be taken.
 
+Note that we use no bias thus we have a total of 16 weights to learn.
+
 <img src="https://drive.google.com/uc?export=view&id=1G9neJrzQ8sGTeUPnPvnJlmH_AnA6VHNQ" alt="flappybird NN"/>
+
+## The genome
+<img src="https://drive.google.com/uc?export=view&id=1ilIIhYEFnwmRDn-6aDE-7usQKE5pNdZw" alt="flappybird genome"/>
+
+The bird genome is just the weights of the NN.
+
+We consider the genome/DNA of the bird as 2 sequences: the first set of weights is w1-w8, the weights between the input layer and the hidden layer.
+The  second set are the weights w9-w16, the weights from the hidden layer to the output.
+
+The genome is used using this structure in the evolution operators.
+
 
 ## The Selection operator
 

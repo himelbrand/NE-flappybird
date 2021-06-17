@@ -150,3 +150,4 @@ def plot_comparison(gens,p1,p2,p3,title,ylabel,suffix):
     plt.tight_layout()
     plt.savefig(f'plots/comp_{gens[0]}-{gens[-1]}_{suffix}.png')
     plt.close()
+

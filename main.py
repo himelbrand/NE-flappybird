@@ -2,12 +2,15 @@ import time
 import flappy_bird_gym
 from population import BirdsPopulation
 import numpy as np
-from multiprocessing import Pool
+import multiprocessing
 import utils
+import torch
 
-birds = BirdsPopulation()
+
+birds = BirdsPopulation(rgb=False)
 envs = {bird.id: flappy_bird_gym.make("FlappyBird-v0") for bird in birds.population}
 main_env = flappy_bird_gym.make("FlappyBird-v0")
+
 
 def run_with_render(bird, recording=False):
     print(f'running with render - bird{bird.id} with fitness of {bird.fitness}')
@@ -38,7 +41,8 @@ def evaluate_fitness(bird):
     env = envs[bird.id]
     runs = []
     scores = []
-    for _ in range(10):
+    print(f'{bird.id}: started!')
+    for _ in range(3):
         obs = env.reset()
         fitness = 0
         while True:
@@ -51,6 +55,7 @@ def evaluate_fitness(bird):
                 break
         env.close()
         runs.append(fitness)
+    print(f'{bird.id}: done!')
     return bird.id, np.mean(runs), np.mean(scores)
 
 
@@ -61,7 +66,7 @@ def evolution(initial_gen=0):
     max_score = 0
     stime = time.time()
     for gen in range(initial_gen, initial_gen+101):
-        with Pool(8) as pool:
+        with multiprocessing.get_context('fork').Pool(8) as pool:
             fitnesses = pool.map(evaluate_fitness,birds.population)
             birds.update_fitness(fitnesses)
             bird_id, fitness, score = sorted(fitnesses,key=lambda x: x[1],reverse=True)[0]

@@ -6,12 +6,6 @@ import multiprocessing
 import utils
 import torch
 
-
-birds = BirdsPopulation(rgb=False)
-envs = {bird.id: flappy_bird_gym.make("FlappyBird-v0") for bird in birds.population}
-main_env = flappy_bird_gym.make("FlappyBird-v0")
-
-
 def run_with_render(bird, recording=False):
     print(f'running with render - bird{bird.id} with fitness of {bird.fitness}')
     obs = main_env.reset()
@@ -92,10 +86,15 @@ if __name__ == '__main__':
         parser.add_argument('-ig', dest='initial_gen', metavar='G', default=0, type=int, help='Initial generation')
         parser.add_argument('-load', dest='load', action='store_true', help='use this flag to load population from initial_gen if initial_gen is 0.')
         parser.add_argument('-plot', dest='plot', action='store_true', help='use this flag to plot best of gen 0 to 200')
+        parser.add_argument('-rgb', dest='rgb', action='store_true', help='use the RGB version')
         parser.add_argument('-sd', dest='subdir', metavar='SUBDIR', default='', type=str, help='subdir for weights')
         args = parser.parse_args()
         return args
     args = parse_args()
+    birds = BirdsPopulation(rgb=args.rgb)
+    env_str = f"FlappyBird{'-rgb-' if args.rgb else ''}-v0"
+    envs = {bird.id: flappy_bird_gym.make(env_str) for bird in birds.population}
+    main_env = flappy_bird_gym.make(env_str)
     if args.initial_gen > 0 or args.load:
         birds.load_population(generation=args.initial_gen,subdir=args.subdir)
     if args.train:

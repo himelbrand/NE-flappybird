@@ -4,7 +4,6 @@ This project is an implementation of neuro-evolution techniques using pytorch to
 
 This project was done entirely for fun, and was included in a seminar talk I presented on the topic of evolution and games: [link to the presentation](https://drive.google.com/file/d/1d-3R-Rxr_p3sAPNx1vfStFdQUYGagXds/view?usp=sharing).
 
-All the GIFs and images are taken from the presentation.
 
 ## The NN architecture (for the non-rgb version)
 
@@ -17,7 +16,9 @@ Note that we use no bias thus we have a total of 16 weights to learn.
 <img src="https://drive.google.com/uc?export=view&id=1G9neJrzQ8sGTeUPnPvnJlmH_AnA6VHNQ" alt="flappybird NN"/>
 
 ## The genome
+<br>
 <img src="https://drive.google.com/uc?export=view&id=1ilIIhYEFnwmRDn-6aDE-7usQKE5pNdZw" alt="flappybird genome"/>
+<br>
 
 The bird genome is just the weights of the NN.
 
